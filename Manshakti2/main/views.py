@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import *
-from django.utils import timezone
 
 # Create your views here.
 def index(request):
@@ -14,7 +13,6 @@ def share(request):
 			story1.name=request.POST['name']
 			story1.city=request.POST['city']
 			story1.inbox=request.POST['inbox']
-			story1.pub_date=datetime.timezone.now()
 			story1.save()
 			allstorys=Story.objects.filter(admin_approved=True).order_by('pub_date')
 			return render(request, 'main/index.html', {'allstorys':allstorys, 'lookup':'Your story has been submitted successfully. You can see it in Shared Stories Section once it gets approved',})
