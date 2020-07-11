@@ -4,7 +4,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Story(models.Model):
-	name = models.CharField(max_length=30)
+	name = models.CharField(max_length=30, blank=True , default="")
 	city = models.CharField(max_length=12)
 	inbox = models.TextField(max_length=3500)
 	admin_approved=models.BooleanField(default="False")

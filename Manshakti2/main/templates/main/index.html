@@ -30,12 +30,10 @@
 		<p></p>
 	{% endif %}
 <br>
-	<form method="POST" action="{% url 'share' %}" enctype="multipart/form-data">
-		<input type="text" name="name" placeholder="Name(Optional)" /><br>
-		<input type="text" name="city" placeholder="City" /><br>
-		<textarea placeholder="Type Here"></textarea>
-		<br><input type="submit" value="Share" name="Share">
+	<form method="POST" action="{% url 'share' %}" name = "storyform">
 		{% csrf_token %}
+		{{ storyform.as_p }}
+		<br><input type="submit" value="Share" name="Share">
 	</form>
 
 
