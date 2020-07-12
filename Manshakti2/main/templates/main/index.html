@@ -11,23 +11,33 @@
 </head>
 <body>
 
-	<h1>MANSHAKTI PORTAL</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<h1>ABOUT US</h1>
+			</div>
+			<div class="col-6">
+				<img src="{% static 'main/Group13.png' %}">
+			</div>
+		</div>
+	</div>
 	<br>
 	{% if allstorys %}
-		{% for story in allstorys.all %}
+		
 		<div class="container">
+		{% for story in allstorys.all %}	
 			<div class="row">
-			<div style="border: 2px solid #000" class="col">
-				{{ story.inbox }}
-				<br>	
-			</div>
-		</div>	
+				<div style="border: 2px solid #000" class="col">
+					{{ story.inbox }}
+				</div>
+			</div>	
+			<br>
+			{% endfor %}
 		</div>
 		
-		{% endfor %}
 
 	{% else %}
-		<p></p>
+	<p></p>
 	{% endif %}
 <br>
 	<form method="POST" action="{% url 'share' %}" name = "storyform">
