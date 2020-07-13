@@ -1,0 +1,107 @@
+html{
+	scroll-behavior: smooth;
+}
+
+.navigation{
+	padding-top: 1.7em;
+}
+
+.navlinking{
+	color: #0A2157;
+	font-weight: bold;
+	line-height: 2.4em;
+}
+
+.navlinking:hover{
+	color: #6C63FF;
+	text-decoration: none;
+}
+.content{
+	font-size: 1.2em;
+	color: #0A2157;
+}
+
+.starting{
+	margin-top: 8em;
+}
+
+h1, h2, h3{
+	color: #0A2157;
+	font-weight: 700;
+}
+
+.customsize1{
+	font-size: 3.4em;
+	margin-bottom: 1em;
+}
+
+.topic2{
+	margin-top: 15em;
+}
+
+.customsize{
+	line-height: 0.3em;
+}
+
+.overlay{
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	background: #3A4D78;
+	/*opacity: 0.75;*/
+	transition: all 0.5s ease-in-out;
+}
+
+.wrap{
+	max-width: 400px;
+	margin: auto;
+	padding: 20px;
+	background: #0A2157;
+	margin-top: 90px;
+	opacity: 1;
+}
+
+.open{
+	border: 2px solid #FFD1CC;
+	background-color: #FFD1CC;
+	border-radius: 15px;
+	color: #0A2157;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.closebtn{
+	position: absolute;
+	top: 95px;
+	padding-right: 0px;
+	font-size: 60px;
+	cursor: pointer;
+	color: #000;
+	margin-left: 280px;
+}
+
+.closebtn:hover{
+	color: #ccc;
+}
+
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0A2157;
+    border-radius: 5px;
+  }
