@@ -6,21 +6,71 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="shortcut icon" href="http://www.iconj.com/ico/c/8/c8tcczu972.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
 	<title>ManShakti</title>
 </head>
 <body>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-6">
-				<h1>ABOUT US</h1>
-			</div>
-			<div class="col-6">
-				<img src="{% static 'main/Group13.png' %}">
+	<!-- Navigation Bar starts -->
+		<div class="container">
+			<div class="row navigation">
+				<div class="col-4">
+					<img src="{% static 'main/Asset1.png' %}" style="height: 90%; width: 60%">
+				</div>
+				<div class="col-2">
+					<a href="#aboutus" class="navlinking"><center>About</center></a>
+				</div>
+				<div class="col-2">
+					<a href="#stories" class="navlinking"><center>Stories of Recovery</center></a>
+				</div>
+				<div class="col-2">
+					<a href="#share" class="navlinking"><center>Share Your Story</center></a>
+				</div>
+				<div class="col-2">
+					<a href="#events" class="navlinking"><center>Events</center></a>
+				</div>
 			</div>
 		</div>
+	<!-- Navigation Bar ends -->
+	<br><br>
+	<div class="container starting">
+		<!-- About us section starts -->
+		<div class="row">
+			<div class="col-7"><br>
+				<h1 id="aboutus" class="customsize1">About us</h1>
+				<p class="content">We, here at Alcheringa IIT Guwahati, have taken a small step on the long journey towards mental wellness. Manshakti is a mental health awareness and wellness campaign which aims to empathize and understand the people who suffer.</p>
+			</div>
+			<div class="col-5 text-right">
+
+				<img src="{% static 'main/Group13.png' %}" style="align: right; width: 21em; height: 18em;" />
+			</div>
+		</div>
+		<!-- About us section ends -->
+		
+		<!-- ##################### -->
+		<!-- ##################### -->
+
+		<!-- Stories of Recovery section starts -->
+		<div class="row topic2">
+			<div class="col-6">
+				<img src="{% static 'main/Group12.png' %}" style="height: 20em; width: 25.4em;">
+			</div>
+			<!-- <div class="col-2"> -->
+				
+			<!-- </div> -->
+			<div class="col-6"><br><br>
+				<h2 id="stories">Stories of</h2><h1 class="customsize" style="font-weight: 800;">Recovery</h1>
+				<br><br>
+				<p class="content">These people have suffered and battled with mental illnesses and now they stand strong. We thank them for sharing their stories to inspire us.</p>
+			</div>
+		</div>
+		<!-- Stories of Recovery section ends -->
+
 	</div>
 	<br>
+
+	<!-- Show messages section starts -->
 	{% if allstorys %}
 		
 		<div class="container">
@@ -38,13 +88,93 @@
 	{% else %}
 	<p></p>
 	{% endif %}
+	<!-- Show messages section ends -->
 <br>
-	<form method="POST" action="{% url 'share' %}" name = "storyform">
-		{% csrf_token %}
-		{{ storyform.as_p }}
-		<br><input type="submit" value="Share" name="Share">
-	</form>
+	<div class="container">
+		<!-- Share your story section starts -->
+		<div class="row">
+			<div class="col-7"><br><br><br>
+				<h2 id="share">Share your</h2><h1 class="customsize" style="font-weight: 800;">Story</h1>
+				<br><br>
+				<p class="content">Join us in helping others battle mental illness. <br>Share the pain, share the love.</p>
+			</div>
+			<div class="col-5">
+				<img src="{% static 'main/Group2.png' %}" style="width: 29em; height: 20em;">
+			</div>	
+		</div>
+		<!-- Share your story section ends -->
+			&emsp;&emsp;&emsp;&emsp;
+			<button type="button" class="open btn" onclick="openShare()">Share Now</button>
+			<br><br>
+		<!-- Share Now Button Code -->
+	</div>
 
+	<div id="myOverlay" class="overlay">
+		<!-- Story Share Overlay Form starts -->
+		<div class="wrap">
+			<span class="closebtn" onclick="closeShare()" title="Close Share"> &#215 </span>
+			<br><br>
+			<form method="POST" action="{% url 'share' %}" name = "storyform">
+				{% csrf_token %}
+				{{ storyform.as_p }}
+				<br><input type="submit" value="Share" name="Share">
+			</form>	
+		</div>
+		<!-- Story Share Overlay Form ends -->
+	</div>
+	
+	<div class="container starting">
+		<!-- Live Event section starts -->
+		<div class="row">
+			<div class="col-6">
+				<img src="{% static 'main/Group17.png' %}" style="width: 18em;height:20em ;">
+			</div>
+			<div class="col-6">
+				<h2 id="events">Live</h2><h1 class="customsize" style="font-weight: 800;">Event</h1><br><br>
+				<p class="content">To stay protected in these stressful times, we bring to you interesting and fun competitons and events.</p>
+			</div>
+		</div>
+		<!-- Live Event section ends -->
+		<br><br><br>
+		<center>
+			<h3>Coming Soon ....</h3>
+			
+			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+			<!-- Competition Submissions Code Here -->
+			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+		</center>
+		<br><br><br><br><br><br>
+		<div class="row">
+			<!-- Contact Info section starts -->
+			<div class="col-4">
+				<h4>Contact Us</h4>
+				Phone- 7340585743<br>
+				Mail us- <a href="mailto:prakhargoyal106@gmail.com">prakhargoyal106@gmail.com</a><br>
+				Linked In- <a href="https://www.linkedin.com/in/prakhar-goyal-83bb89179/">Campaigns Head</a>
+				<br><br>
+			</div>
+			<div class="col-4">
+				
+			</div>
+			<div class="col-4">
+				<span><img src="{% static 'main/insta.png' %}"></span>
+				<span><img src="{% static 'main/Fb.png' %}"></span>
+				<span><img src="{% static 'main/Twitter.png' %}"></span>
+			</div>
+			<!-- Contact Info section ends -->
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		function closeShare(){
+			document.getElementById("myOverlay").style.display = "none";
+		}
+		function openShare(){
+			document.getElementById("myOverlay").style.display = "block";
+		}
+	</script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
