@@ -20,7 +20,7 @@ def share(request):
 		else:
 			storyform = storyForm()
 			allstorys=Story.objects.filter(admin_approved=True).order_by('-pub_date')
-			return render(request, 'main/index.html', {'allstorys':allstorys, 'lookup':'It seems like you missed out one field', 'storyform' : storyform})
+			return render(request, 'main/index.html', {'allstorys':allstorys, 'storyform' : storyform})
 
 	else:
 		storyform = storyForm()
