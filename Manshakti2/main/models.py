@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils import timezone
-
+from django import forms
 
 # Create your models here.
 class Story(models.Model):
-	name = models.CharField(max_length=30, blank=True , default="")
+	name = models.CharField(max_length=30, blank=True , default="Anonymous")
 	city = models.CharField(max_length=12)
 	inbox = models.TextField(max_length=3500)
 	subject = models.CharField(max_length=90, default="")
